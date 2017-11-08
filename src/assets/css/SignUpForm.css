@@ -1,0 +1,16 @@
+.page-center{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(80%);
+}
+
+.box-shadow-effect{
+  -webkit-box-shadow: -9px 4px 29px -6px rgba(102,102,102,0.7);
+  -moz-box-shadow: -9px 4px 29px -6px rgba(102,102,102,0.7);
+  box-shadow: -9px 4px 29px -6px rgba(102,102,102,0.7);
+}
+.hover-underline:hover{
+  text-decoration: underline;
+}
