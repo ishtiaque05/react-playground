@@ -44,6 +44,15 @@ class SignUpForm extends React.Component {
           <Grid.Column className="box-shadow-effect" width="4" textAlign="left">
             <Form onSubmit={this.onSubmit} loading={loading}>
               <Form.Field>
+                <div className="ui horizontal divider">Login with</div>
+                <Button.Group fluid>
+                  <Button className="fb-btn"><i className="facebook icon"/>facebook</Button>
+                  <Button.Or text="or" className="or-divider" />
+                  <Button className="gmail-btn">Gmail<i className="google icon g-icon"/></Button>
+                </Button.Group>
+                <div className="ui divider" />
+              </Form.Field>
+              <Form.Field>
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -82,7 +91,10 @@ class SignUpForm extends React.Component {
               </Form.Field>
               <Form.Field>
                 <label htmlFor="signup">
-                  Don&apos;t have an account? <Link to="/signup" className="hover-underline">Sign Up</Link>
+                  Don&apos;t have an account?{" "}
+                  <Link to="/signup" className="hover-underline">
+                    Sign Up
+                  </Link>
                 </label>
               </Form.Field>
             </Form>
