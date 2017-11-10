@@ -3,9 +3,9 @@ import Validator from "validator";
 import { Link } from "react-router-dom";
 import { Grid, Button, Checkbox, Form } from "semantic-ui-react";
 import InlineError from "../messages/InlineError";
-import "../../assets/css/SignUpForm.css";
+import "../../assets/css/LoginForm.css";
 
-class SignUpForm extends React.Component {
+class LoginForm extends React.Component {
   state = {
     data: {
       email: "",
@@ -40,15 +40,19 @@ class SignUpForm extends React.Component {
     const { data, errors, loading } = this.state;
     return (
       <div className="page-center">
-        <Grid columns={2} centered>
+        <Grid columns={2} centered stackable>
           <Grid.Column className="box-shadow-effect" width="4" textAlign="left">
-            <Form onSubmit={this.onSubmit} loading={loading}>
+            <Form error onSubmit={this.onSubmit} loading={loading}>
               <Form.Field>
                 <div className="ui horizontal divider">Login with</div>
                 <Button.Group fluid>
-                  <Button className="fb-btn"><i className="facebook icon"/>facebook</Button>
+                  <Button className="fb-btn">
+                    <i className="facebook icon" />facebook
+                  </Button>
                   <Button.Or text="or" className="or-divider" />
-                  <Button className="gmail-btn">Gmail<i className="google icon g-icon"/></Button>
+                  <Button className="gmail-btn">
+                    Gmail<i className="google icon g-icon" />
+                  </Button>
                 </Button.Group>
                 <div className="ui divider" />
               </Form.Field>
@@ -62,9 +66,7 @@ class SignUpForm extends React.Component {
                   onChange={this.onChange}
                   placeholder="Email"
                 />
-                {errors.email && (
-                  <InlineError header="Email Error" text={errors.email} />
-                )}
+                {errors.email && <InlineError text={errors.email} />}
               </Form.Field>
 
               <Form.Field>
@@ -77,9 +79,7 @@ class SignUpForm extends React.Component {
                   onChange={this.onChange}
                   placeholder="password"
                 />
-                {errors.password && (
-                  <InlineError header="Password Error" text={errors.password} />
-                )}
+                {errors.password && <InlineError text={errors.password} />}
               </Form.Field>
               <Form.Field>
                 <Checkbox label="Remember me" defaultChecked />
@@ -105,4 +105,4 @@ class SignUpForm extends React.Component {
   }
 }
 
-export default SignUpForm;
+export default LoginForm;

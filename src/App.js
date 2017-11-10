@@ -2,13 +2,18 @@ import React from "react";
 import { Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import Playground from "./components/Pages/Playground";
-import SignUpForm from "./components/Pages/SignUpForm";
+import LoginForm from "./components/Pages/LoginForm";
 
 const App = ({ location }) => (
   <div>
-    <h1>Welcome to react Playground!</h1>
-    <Route location={location} path="/" exact component={ Playground } />
-    <Route location={location} path="/signup_form" exact component={ SignUpForm } />
+    {window.location.pathname === "/" && 
+      <div className="text-center">
+        <h1>Welcome to components Scrap Yard!!</h1>
+      </div>
+    }
+
+    <Route location={location} path="/" exact component={Playground} />
+    <Route location={location} path="/login_form" exact component={LoginForm} />
   </div>
 );
 
