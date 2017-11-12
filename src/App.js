@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import Playground from "./components/Pages/Playground";
 import LoginForm from "./components/Pages/LoginForm";
+import SignUpForm from "./components/Pages/SignUpForm";
+
 
 const App = ({ location }) => (
   <div>
@@ -14,6 +16,7 @@ const App = ({ location }) => (
 
     <Route location={location} path="/" exact component={Playground} />
     <Route location={location} path="/login_form" exact component={LoginForm} />
+    <Route location={location} path="/signup" exact component={SignUpForm} />
   </div>
 );
 
