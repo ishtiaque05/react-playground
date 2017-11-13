@@ -1,14 +1,7 @@
 import React from "react";
 import Validator from "validator";
 import { Link } from "react-router-dom";
-import {
-  Grid,
-  Button,
-  Form,
-  Icon,
-  Radio,
-  Modal,
-} from "semantic-ui-react";
+import { Grid, Button, Form, Icon, Radio, Modal, Divider } from "semantic-ui-react";
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import moment from "moment";
 import "react-day-picker/lib/style.css";
@@ -78,35 +71,41 @@ class SignUpForm extends React.Component {
     };
 
     return (
-      <div className="page-center">
-        <Grid columns={3} centered>
+      <div className="page-center-signup">
+        <div className="boxify">
+        <Grid columns={3} centered stackable>
           <Grid.Row columns={1}>
             <Grid.Column textAlign="center">
               <h1>Create a New Account</h1>
             </Grid.Column>
-            <Grid.Column textAlign="center">
+            <Grid.Column textAlign="center" className="general-text">
               Come join the community. Lets us setup your account. Already have
               an account? <Link to="/login_form">Login</Link>
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row columns={4} centered>
-            <Grid.Column width={4}>
+          <Grid.Row columns={4}>
+            <Grid.Column width={4} className="left-align-social-btn">
               <Grid.Row columns={1}>
-                <Grid.Column>Why be old fashioned.</Grid.Column>
-                <Grid.Column>Just sign up with:</Grid.Column>
                 <Grid.Column>
-                  <Button size="medium" color="facebook">
+                  <p className="general-text">
+                    Why be old fashioned.<br />Just sign up with:
+                  </p>
+                </Grid.Column>
+                <div className="social-btn">
+                <Grid.Column>
+                  <Button size="medium" color="facebook" className="signup-with" >
                     <Icon name="facebook" /> Facebook
                   </Button>
                 </Grid.Column>
                 <Grid.Column>
-                  <Button color="google plus">
+                  <Button color="google plus" className="signup-with">
                     <Icon name="google plus" /> Google Plus
                   </Button>
                 </Grid.Column>
-              </Grid.Row>
+                </div>
+               </Grid.Row>
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column width={5} tablet={6}>
               <Form error>
                 <Form.Group widths="equal">
                   <Form.Input
@@ -127,7 +126,7 @@ class SignUpForm extends React.Component {
                   />
                 </Form.Group>
                 <Form.Field>
-                  <label htmlFor="emai">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input
                     type="text"
                     id="email"
@@ -200,6 +199,7 @@ class SignUpForm extends React.Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        </div>
       </div>
     );
   }
