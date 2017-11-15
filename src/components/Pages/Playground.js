@@ -3,10 +3,10 @@ import { Grid, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const Playground = () => (
-  <Grid stackable columns="equal" container="true">
+  <Grid stackable columns="equal" container>
     <Grid.Row>
       <Grid.Column>
-        <Segment> <Link to='/signup_form'>Signup-form</Link></Segment>
+        <Segment> <Link to='/login_form'>Login-form</Link></Segment>
       </Grid.Column>
       <Grid.Column>
         <Segment textAlign="center">2</Segment>

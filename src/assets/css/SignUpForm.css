@@ -1,16 +1,43 @@
-.page-center{
+.DayPickerInput-OverlayWrapper .DayPickerInput-Overlay{
+  z-index: 10;
+}
+.general-text {
+  font-size: 16px;
+}
+.page-center-signup{
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(50%);
-  -ms-transform: translateY(50%);
-  transform: translateY(80%);
+  top: 40%;
+  -webkit-transform: translateY(7%);
+  -ms-transform: translateY(7%);
+  transform: translateY(7%);
+}
+.social-btn{
+  margin-top: 80px;
+}
+.column .signup-with {
+  margin-bottom: 10px;
+  min-width: 204px;
 }
 
-.box-shadow-effect{
-  -webkit-box-shadow: -9px 4px 29px -6px rgba(102,102,102,0.7);
-  -moz-box-shadow: -9px 4px 29px -6px rgba(102,102,102,0.7);
-  box-shadow: -9px 4px 29px -6px rgba(102,102,102,0.7);
+@media (min-width: 421px) and (max-width: 767px) {
+  .boxify{
+    max-width: 420px;
+    margin: auto;
+    text-align: center;
+  }
+  .social-btn{
+    margin-top: 5px;
+  }
+  .left-align-social-btn{
+    text-align: center !important;
+  }
 }
-.hover-underline:hover{
-  text-decoration: underline;
+
+@media (max-width: 420px){
+  .social-btn{
+    margin-top: 5px;
+  }
+  .left-align-social-btn{
+    text-align: center !important;
+  }
 }
