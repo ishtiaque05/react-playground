@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.19.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
+    "react-bootstrap": "^0.31.5",
+    "react-datepicker": "^0.60.2",
+    "react-day-picker": "^6.2.1",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
@@ -13,7 +17,8 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.12",
-    "semantic-ui-react": "^0.75.1"
+    "semantic-ui-react": "^0.75.1",
+    "validator": "^9.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
