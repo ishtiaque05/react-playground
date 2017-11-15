@@ -152,7 +152,7 @@ class SignUpForm extends React.Component {
                     />
                   </Form.Group>
                   {errors.firstname && <InlineError text={errors.firstname} />}
-                  <Form.Field>
+                  <Form.Field required>
                     <label htmlFor="email">Email</label>
                     <input
                       type="text"
@@ -164,7 +164,7 @@ class SignUpForm extends React.Component {
                     />
                     {errors.email && <InlineError text={errors.email} />}
                   </Form.Field>
-                  <Form.Field>
+                  <Form.Field required>
                     <label htmlFor="password">Password</label>
                     <input
                       type="password"
@@ -176,7 +176,7 @@ class SignUpForm extends React.Component {
                     />
                     {errors.password && <InlineError text={errors.password} />}
                   </Form.Field>
-                  <Form.Field>
+                  <Form.Field required>
                     <label htmlFor="dob">Date of birth</label>
                     <DayPickerInput
                       value={formattedDay}
