@@ -1,0 +1,16 @@
+ul.nav-sidebar li {
+  list-style-type: none;
+}
+
+
+.list-item.active {
+  color: rgb(255, 9, 9);
+  text-decoration: underline;
+}
+
+.map-dashboard{
+  transform: translateY(66%);
+}
+.right-border{
+  border-right: solid 1px lightgrey;
+}
