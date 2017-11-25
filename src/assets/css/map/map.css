@@ -9,7 +9,7 @@ ul.nav-sidebar li {
 }
 
 .map-dashboard{
-  transform: translateY(66%);
+  transform: translateY(10%);
 }
 .right-border{
   border-right: solid 1px lightgrey;
