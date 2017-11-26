@@ -13,7 +13,7 @@ class MapDemo extends React.Component {
       <HashRouter>
         <div className="map-dashboard">
         <Container>
-          <Grid container>
+          <Grid container stackable>
             <Grid.Column width={4} className="right-border">
               <ul className="nav-sidebar">
                 <li>
