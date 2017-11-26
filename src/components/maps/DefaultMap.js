@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import CurrentLocation from "../maps/CurrentLocation";
 
 const { compose, withProps, withStateHandlers } = require("recompose");
@@ -15,17 +16,19 @@ class DefaultMap extends React.Component {
     lat: null,
     long: null,
     error: "",
+    humanReadableAddress: ""
   };
 
   async componentWillMount() {
     try {
       if (navigator.geolocation) {
         const position = await CurrentLocation({
-          enableHighAccuracy: false,
+          enableHighAccuracy: true,
           timeout: 20000,
           maximumAge: 1000,
         });
         console.log("positionnnnnnnnn------------", position.coords);
+        this.HumanReadableAddress(position.coords.latitude,position.coords.longitude)
         this.setState({
           lat: position.coords.latitude,
           long: position.coords.longitude,
@@ -38,12 +41,21 @@ class DefaultMap extends React.Component {
     }
   }
 
+ HumanReadableAddress = (lat, lng) => {
+    axios
+      .get(
+        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyDa8afGOqDCwnvY5U7TqL-_RdUEiY215s4`,
+      )
+      .then(response => this.setState({humanReadableAddress: response.data.results[0].formatted_address }))
+      .catch(err => console.log(err));
+  };
+
   InitialLocation = position => {
     this.setState({ lat: position.lat, lng: position.long });
   };
 
   render() {
-    const { lat, long, error } = this.state;
+    const { lat, long, error, humanReadableAddress } = this.state;
     const MapWithAMarker = compose(
       withStateHandlers(
         () => ({
@@ -62,7 +74,7 @@ class DefaultMap extends React.Component {
         <Marker position={{ lat, lng: long }} onClick={props.onToggleOpen}>
           {props.isOpen && (
             <InfoWindow onCloseClick={props.onToggleOpen}>
-              <div>Hello world</div>
+              <div>{ humanReadableAddress }</div>
             </InfoWindow>
           )}
         </Marker>
