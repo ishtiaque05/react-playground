@@ -12,6 +12,7 @@ const pnChannel = "map-demo";
 const pubnub = new PubNub({
   publishKey: "pub-c-27b4e205-2ce2-4a96-acf1-e374d1610327",
   subscribeKey: "sub-c-6e2a9480-d2c8-11e7-aee1-6e8e9d2d00b1",
+  uuid: PubNub.generateUUID()
 });
 
 
