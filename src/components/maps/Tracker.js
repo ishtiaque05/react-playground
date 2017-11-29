@@ -27,7 +27,7 @@ class Tracker extends React.Component{
     pubnub.subscribe({ channels: [pnChannel] });
     pubnub.addListener({ message: this.redraw });
     console.log(pubnub);
-    setInterval(
+    this.tracker = setInterval(
       () =>
         pubnub.publish({
           channel: pnChannel,
@@ -35,6 +35,11 @@ class Tracker extends React.Component{
         }),
       1000,
     );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.tracker);
+    delete this.tracker;
   }
 
   redraw = payload => {

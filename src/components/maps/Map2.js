@@ -1,5 +1,6 @@
 import React from "react";
 import Tracker from "./Tracker";
+
 const { compose } = require("recompose");
 const {
   withScriptjs,
